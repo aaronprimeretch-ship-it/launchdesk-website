@@ -1,0 +1,112 @@
+import { useState } from 'react';
+import { Menu, X } from 'lucide-react';
+
+export default function Navigation() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  return (
+<nav className="bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100 fixed w-full top-32 sm:top-16 z-50 h-20">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="flex justify-between items-stretch h-20">
+      {/* Logo and Slogan */}
+      <div className="flex items-center space-x-3">
+        <button 
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="flex items-center hover:opacity-80 transition-opacity duration-300"
+        >
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-primary to-secondary rounded-lg flex items-center justify-center">
+            <span className="text-white font-bold text-sm sm:text-base">LD</span>
+          </div>
+          <div className="ml-3">
+            <div className="text-lg sm:text-xl lg:text-2xl font-black text-gray-900 font-calluna">LaunchDesk</div>
+            <div className="text-xs sm:text-sm text-gray-600 hidden sm:block font-medium font-calluna">Gateway to South African Business</div>
+          </div>
+        </button>
+      </div>
+
+      {/* Desktop Navigation */}
+      <div className="hidden md:block h-full">
+        <div className="ml-10 flex items-stretch h-full space-x-6 lg:space-x-8">
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="text-gray-900 hover:text-primary px-4 h-full flex items-center text-base font-calluna font-medium transition-colors"
+          >
+            Home
+          </button>
+          <button 
+            onClick={() => document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-gray-600 hover:text-primary px-4 h-full flex items-center text-base font-calluna font-medium transition-colors"
+          >
+            Services
+          </button>
+          <button 
+            onClick={() => document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' })}
+            className="text-gray-600 hover:text-primary px-4 h-full flex items-center text-base font-calluna font-medium transition-colors"
+          >
+            Pricing
+          </button>
+        </div>
+      </div>
+
+      {/* CTA Button */}
+      <div className="hidden md:block h-full flex items-center">
+        <a 
+          href="https://app.govchain.co.za/signup?ref=A9C8486C" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-primary text-white px-6 py-3 rounded-xl text-base font-bold font-calluna transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl my-3"
+        >
+          Connect with Govchain
+        </a>
+      </div>
+
+      {/* Mobile menu button */}
+      <div className="md:hidden flex items-center h-full">
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="bg-gray-50 p-3 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 my-4"
+        >
+          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  {/* Mobile menu */}
+  {isMenuOpen && (
+    <div className="md:hidden absolute top-full left-0 w-full z-50">
+      <div className="px-4 pt-4 pb-6 space-y-2 bg-white border-t border-gray-100 shadow-lg">
+        <button 
+          onClick={() => { window.scrollTo({ top: 0, behavior: 'smooth' }); setIsMenuOpen(false); }}
+          className="text-gray-900 hover:text-primary block w-full text-left px-4 py-3 text-base font-calluna font-medium rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Home
+        </button>
+        <button 
+          onClick={() => { document.getElementById('services')?.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); }}
+          className="text-gray-600 hover:text-primary block w-full text-left px-4 py-3 text-base font-calluna font-medium rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Services
+        </button>
+        <button 
+          onClick={() => { document.getElementById('pricing')?.scrollIntoView({ behavior: 'smooth' }); setIsMenuOpen(false); }}
+          className="text-gray-600 hover:text-primary block w-full text-left px-4 py-3 text-base font-calluna font-medium rounded-lg hover:bg-gray-50 transition-colors"
+        >
+          Pricing
+        </button>
+        <div className="pt-2 px-4">
+          <a 
+            href="https://app.govchain.co.za/signup?ref=A9C8486C" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="w-full inline-block text-center bg-gradient-to-r from-primary to-blue-700 hover:from-blue-700 hover:to-primary text-white px-4 py-3 rounded-xl text-base font-bold font-calluna transition-all duration-300 shadow-lg"
+          >
+            Connect with Govchain
+          </a>
+        </div>
+      </div>
+    </div>
+  )}
+</nav>
+  );
+}

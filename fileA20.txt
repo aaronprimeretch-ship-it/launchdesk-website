@@ -1,0 +1,104 @@
+import { useState, useEffect } from 'react';
+import { X, Gift } from 'lucide-react';
+
+export default function FloatingDiscountBanner() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isMinimized, setIsMinimized] = useState(false);
+  const [isHidden, setIsHidden] = useState(false);
+
+  useEffect(() => {
+// Show banner after 3 seconds
+const timer = setTimeout(() => {
+  setIsVisible(true);
+}, 3000);
+
+// Hide banner when scrolling near footer
+const handleScroll = () => {
+  const scrollHeight = document.documentElement.scrollHeight;
+  const scrollTop = document.documentElement.scrollTop;
+  const clientHeight = document.documentElement.clientHeight;
+  const footerHeight = 200; // Approximate footer height
+  
+  // Hide banner when within 300px of the footer
+  if (scrollHeight - scrollTop - clientHeight < footerHeight + 100) {
+    setIsHidden(true);
+  } else {
+    setIsHidden(false);
+  }
+};
+
+window.addEventListener('scroll', handleScroll);
+return () => {
+  clearTimeout(timer);
+  window.removeEventListener('scroll', handleScroll);
+};
+  }, []);
+
+  if (!isVisible || isHidden) return null;
+
+  return (
+<div className={`fixed bottom-2 right-2 sm:bottom-4 sm:right-4 z-40 transition-all duration-500 ${isMinimized ? 'w-12 h-12 sm:w-16 sm:h-16' : 'w-64 sm:w-80'}`}>
+  {isMinimized ? (
+    // Minimized state
+    <button
+      onClick={() => setIsMinimized(false)}
+      className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-accent-green to-green-600 text-white rounded-full shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 flex items-center justify-center animate-bounce"
+    >
+      <Gift className="w-6 h-6 sm:w-8 sm:h-8" />
+    </button>
+  ) : (
+    // Expanded state
+    <div className="bg-gradient-to-r from-accent-green to-green-600 text-white rounded-2xl shadow-2xl p-4 sm:p-6 relative overflow-hidden">
+      {/* Close button */}
+      <button
+        onClick={() => setIsVisible(false)}
+        className="absolute top-2 right-2 w-6 h-6 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
+      >
+        <X className="w-4 h-4" />
+      </button>
+
+      {/* Minimize button */}
+      <button
+        onClick={() => setIsMinimized(true)}
+        className="absolute top-2 right-10 w-6 h-6 bg-white/20 hover:bg-white/30 rounded-full flex items-center justify-center transition-colors duration-200"
+      >
+        <span className="text-xs">−</span>
+      </button>
+
+      {/* Background animation */}
+      <div className="absolute inset-0 bg-gradient-to-r from-green-400/20 to-emerald-400/20 animate-pulse"></div>
+
+      {/* Content */}
+      <div className="relative z-10">
+        <div className="flex items-center mb-2 sm:mb-3">
+          <Gift className="w-4 h-4 sm:w-6 sm:h-6 mr-1 sm:mr-2" />
+          <span className="font-bold font-calluna text-base sm:text-lg">Special Offer!</span>
+        </div>
+        
+        <div className="mb-3 sm:mb-4">
+          <div className="text-xl sm:text-2xl font-bold font-calluna mb-1">Save R100</div>
+          <div className="text-xs sm:text-sm opacity-90">on your business registration</div>
+        </div>
+
+        <a 
+          href="https://app.govchain.co.za/signup?ref=A9C8486C" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="w-full bg-white text-accent-green font-bold py-2 px-3 sm:px-4 rounded-lg text-center block hover:bg-gray-100 transition-colors duration-200 font-calluna text-sm sm:text-base"
+        >
+          Claim Discount Now
+        </a>
+
+        <div className="text-xs mt-2 opacity-75 text-center">
+          Limited time offer via LaunchDesk
+        </div>
+      </div>
+
+      {/* Decorative elements */}
+      <div className="absolute -top-2 -right-2 w-8 h-8 bg-secondary rounded-full opacity-50"></div>
+      <div className="absolute -bottom-1 -left-1 w-6 h-6 bg-white/20 rounded-full"></div>
+    </div>
+  )}
+</div>
+  );
+}

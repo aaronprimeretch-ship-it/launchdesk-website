@@ -1,0 +1,60 @@
+import { Twitter, Instagram, Linkedin, Hash } from 'lucide-react';
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  
+  const socialLinks = [
+{ icon: Twitter, label: 'Twitter', href: 'https://twitter.com/launchdesk' },
+{ icon: Instagram, label: 'Instagram', href: 'https://instagram.com/launchdesk' },
+{ icon: Linkedin, label: 'LinkedIn', href: 'https://linkedin.com/company/launchdesk' },
+{ icon: Hash, label: 'Pinterest', href: 'https://pinterest.com/launchdesk' }
+  ];
+  
+  return (
+<footer className="bg-gray-900 text-white py-6 relative z-30">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+      {/* Left side - Social media */}
+      <div className="flex items-center space-x-6">
+        <span className="text-gray-300 font-medium font-calluna text-sm">Follow us on:</span>
+        <div className="flex items-center space-x-4">
+          {socialLinks.map((social, index) => (
+            <a
+              key={index}
+              href={social.href}
+              className="w-8 h-8 bg-gray-800 hover:bg-primary rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 group"
+              aria-label={social.label}
+            >
+              <social.icon className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-300" />
+            </a>
+          ))}
+        </div>
+      </div>
+
+      {/* Center - Copyright */}
+      <div className="text-center">
+        <p className="text-gray-400 font-calluna text-sm">
+          © {currentYear} LaunchDesk. All rights reserved.
+        </p>
+      </div>
+
+      {/* Right side - Links */}
+      <div className="flex items-center space-x-6">
+        <button 
+          onClick={() => window.open('https://app.govchain.co.za/terms', '_blank')}
+          className="text-gray-400 hover:text-white text-sm font-calluna transition-colors duration-300"
+        >
+          Terms & Conditions
+        </button>
+        <button 
+          onClick={() => window.open('https://app.govchain.co.za/privacy', '_blank')}
+          className="text-gray-400 hover:text-white text-sm font-calluna transition-colors duration-300"
+        >
+          Privacy Policy
+        </button>
+      </div>
+    </div>
+  </div>
+</footer>
+  );
+}

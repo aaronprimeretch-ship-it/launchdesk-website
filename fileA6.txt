@@ -1,0 +1,37 @@
+import BenefitsBar from '@/react-app/components/BenefitsBar';
+import Navigation from '@/react-app/components/Navigation';
+import HeroSection from '@/react-app/components/HeroSection';
+import BenefitsSection from '@/react-app/components/BenefitsSection';
+import FeaturesSection from '@/react-app/components/FeaturesSection';
+import ServicesSection from '@/react-app/components/ServicesSection';
+import PricingCard from '@/react-app/components/PricingCard';
+import FAQSection from '@/react-app/components/FAQSection';
+import TrustSection from '@/react-app/components/TrustSection';
+import GlobalSection from '@/react-app/components/GlobalSection';
+import FinalCTASection from '@/react-app/components/FinalCTASection';
+import Footer from '@/react-app/components/Footer';
+import FloatingDiscountBanner from '@/react-app/components/FloatingDiscountBanner';
+
+export default function Home() {
+  return (
+<div className="min-h-screen bg-white">
+  <BenefitsBar />
+  <Navigation />
+  <HeroSection />
+  <BenefitsSection />
+  <FeaturesSection />
+  <div id="services">
+    <ServicesSection />
+  </div>
+  <div id="pricing">
+    <PricingCard />
+  </div>
+  <FAQSection />
+  <TrustSection />
+  <GlobalSection />
+  <FinalCTASection />
+  <Footer />
+  <FloatingDiscountBanner />
+</div>
+  );
+}

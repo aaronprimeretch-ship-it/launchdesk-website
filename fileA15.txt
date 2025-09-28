@@ -1,0 +1,97 @@
+import { Globe, TrendingUp, MapPin, Users } from 'lucide-react';
+
+export default function GlobalSection() {
+  const benefits = [
+{
+  icon: Globe,
+  title: "Gateway to Africa",
+  description: "Access to 54 African countries and emerging markets worth $3.4 trillion",
+  gradient: "from-primary to-blue-600"
+},
+{
+  icon: TrendingUp,
+  title: "Growing Economy",
+  description: "Africa's most developed financial markets and infrastructure",
+  gradient: "from-accent-green to-green-600"
+},
+{
+  icon: Users,
+  title: "International Friendly",
+  description: "English-speaking business environment with established legal systems",
+  gradient: "from-accent-orange to-orange-600"
+}
+  ];
+
+  return (
+<section className="py-16 lg:py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
+    {/* Section Header */}
+    <div className="text-center mb-12 lg:mb-16">
+      <div className="flex items-center justify-center space-x-3 mb-6">
+        <Globe className="w-8 h-8 text-primary" />
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 font-calluna">
+          South Africa: Gateway to African Markets
+        </h2>
+      </div>
+      <p className="text-gray-600 leading-relaxed max-w-3xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontSize: '18px' }}>
+        Position your business at the heart of Africa's economic growth. South Africa offers unparalleled access to continental markets, established infrastructure, and investor-friendly policies.
+      </p>
+    </div>
+
+    {/* Benefits Grid */}
+    <div className="grid md:grid-cols-3 gap-8 lg:gap-12 mb-12">
+      {benefits.map((benefit, index) => (
+        <div key={index} className="text-center group">
+          {/* Icon */}
+          <div className={`w-16 h-16 lg:w-20 lg:h-20 bg-gradient-to-br ${benefit.gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+            <benefit.icon className="w-8 h-8 lg:w-10 lg:h-10 text-white" />
+          </div>
+          
+          {/* Content */}
+          <div className="space-y-3">
+            <h3 className="text-lg lg:text-xl font-bold text-gray-900 font-calluna leading-tight">
+              {benefit.title}
+            </h3>
+            <p className="text-gray-600 leading-relaxed" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>
+              {benefit.description}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Key Stats */}
+    <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 lg:p-12">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+        <div className="space-y-2">
+          <div className="text-2xl lg:text-3xl font-bold text-primary font-calluna">54</div>
+          <div className="text-gray-600" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>African Countries</div>
+        </div>
+        <div className="space-y-2">
+          <div className="text-2xl lg:text-3xl font-bold text-primary font-calluna">$3.4T</div>
+          <div className="text-gray-600" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>Continental GDP</div>
+        </div>
+        <div className="space-y-2">
+          <div className="text-2xl lg:text-3xl font-bold text-primary font-calluna">1.4B</div>
+          <div className="text-gray-600" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>Population</div>
+        </div>
+        <div className="space-y-2">
+          <div className="text-2xl lg:text-3xl font-bold text-primary font-calluna">#1</div>
+          <div className="text-gray-600" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>Financial Hub</div>
+        </div>
+      </div>
+    </div>
+
+    {/* Location Badge */}
+    <div className="flex items-center justify-center mt-8">
+      <div className="flex items-center space-x-2 bg-white rounded-full shadow-lg border border-gray-100 px-6 py-3">
+        <MapPin className="w-5 h-5 text-primary" />
+        <span className="text-gray-700 font-medium font-calluna">
+          Strategic location between emerging and developed markets
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+  );
+}

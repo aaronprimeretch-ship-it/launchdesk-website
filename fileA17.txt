@@ -1,0 +1,124 @@
+import { useState } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
+
+export default function FAQSection() {
+  const [openItems, setOpenItems] = useState<number[]>([]);
+
+  const faqItems = [
+{
+  question: "Can I register a company in South Africa if I live abroad?",
+  answer: "Yes! LaunchDesk connects you with Govchain, which handles registration for both local and international entrepreneurs. You can complete everything online without being physically present."
+},
+{
+  question: "How long does it take to register a company?",
+  answer: "The standard registration process takes 1 week, from name reservation to issuance of your registration certificate and tax number."
+},
+{
+  question: "What documents do I need to provide?",
+  answer: "You typically need a valid ID or passport, shareholder details, and your proposed company name. Govchain guides you through the submission process."
+},
+{
+  question: "Are there any hidden fees?",
+  answer: "No. The pricing is transparent — R950 once-off for registration, which includes all mandatory CIPC filing fees and essential documentation. Optional services like a business banking account may have separate costs."
+},
+{
+  question: "Will I receive a B-BBEE certificate?",
+  answer: "Yes. Govchain provides a free B-BBEE affidavit as part of the registration package."
+},
+{
+  question: "Can I set up a business bank account through LaunchDesk?",
+  answer: "Yes. You can optionally set up a business bank account as part of the registration package. Govchain will guide you through the process."
+},
+{
+  question: "Is LaunchDesk providing legal or tax advice?",
+  answer: "No. LaunchDesk is an independent referral partner. All legal, tax, and compliance services are handled directly by Govchain."
+},
+{
+  question: "How do I track my registration progress?",
+  answer: "Once you submit your details, Govchain provides updates on each step, from name reservation to tax registration, so you always know your company's status."
+}
+  ];
+
+  const toggleItem = (index: number) => {
+setOpenItems(prev => 
+  prev.includes(index) 
+    ? prev.filter(item => item !== index)
+    : [...prev, index]
+);
+  };
+
+  return (
+<section className="py-16 lg:py-20 bg-white">
+  <div className="max-w-4xl mx-auto px-6">
+    {/* Section Header */}
+    <div className="text-center mb-12 lg:mb-16">
+      <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 font-calluna">
+        Frequently Asked Questions
+      </h2>
+      <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: 'Georgia, serif', fontSize: '18px' }}>
+        Everything you need to know about registering your business in South Africa
+      </p>
+    </div>
+
+    {/* FAQ Items */}
+    <div className="space-y-4">
+      {faqItems.map((item, index) => (
+        <div key={index} className="border border-gray-200 rounded-xl overflow-hidden bg-white shadow-sm hover:shadow-md transition-shadow duration-300">
+          {/* Question Button */}
+          <button
+            onClick={() => toggleItem(index)}
+            className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-inset"
+          >
+            <h3 className="text-lg font-bold text-gray-900 font-calluna pr-4 leading-relaxed">
+              {item.question}
+            </h3>
+            <div className="flex-shrink-0">
+              {openItems.includes(index) ? (
+                <ChevronUp className="w-6 h-6 text-primary transition-transform duration-200" />
+              ) : (
+                <ChevronDown className="w-6 h-6 text-primary transition-transform duration-200" />
+              )}
+            </div>
+          </button>
+
+          {/* Answer */}
+          <div className={`transition-all duration-300 ease-in-out ${
+            openItems.includes(index) 
+              ? 'max-h-96 opacity-100' 
+              : 'max-h-0 opacity-0'
+          } overflow-hidden`}>
+            <div className="px-6 pb-5 border-t border-gray-100">
+              <div className="pt-4">
+                <p className="text-gray-700 leading-relaxed" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>
+                  {item.answer}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    {/* Bottom CTA */}
+    <div className="text-center mt-12 lg:mt-16">
+      <div className="bg-gradient-to-br from-slate-50 to-blue-50 rounded-2xl p-8 lg:p-10">
+        <h3 className="text-xl lg:text-2xl font-bold text-gray-900 font-calluna mb-4">
+          Still have questions?
+        </h3>
+        <p className="text-gray-600 mb-6 leading-relaxed" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>
+          Our team is here to help you get started with confidence
+        </p>
+        <a 
+          href="https://app.govchain.co.za/signup?ref=A9C8486C" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block bg-gradient-to-r from-primary to-secondary hover:from-blue-700 hover:to-yellow-500 text-white px-8 py-4 rounded-xl text-lg font-bold font-calluna transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          Contact Govchain Expert
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+  );
+}

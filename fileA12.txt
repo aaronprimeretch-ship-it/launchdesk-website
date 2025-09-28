@@ -1,0 +1,64 @@
+import { Check } from 'lucide-react';
+
+export default function FeaturesSection() {
+  const features = [
+"Reserved company name",
+"Registration certificate (COR14.3)",
+"Income tax registration number",
+"Free B-BBEE affidavit",
+"Share certificates for all shareholders",
+"Optional business banking account"
+  ];
+
+  return (
+<section className="py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50">
+  <div className="max-w-7xl mx-auto px-6">
+    <div className="max-w-4xl mx-auto">
+      {/* Section Header */}
+      <div className="text-center mb-12 lg:mb-16">
+        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6 font-calluna">
+          Starter Service Snapshot
+        </h2>
+        <p className="text-gray-600 leading-relaxed" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>
+          Get everything you need to start your business in South Africa.
+        </p>
+      </div>
+
+      {/* Features Grid */}
+      <div className="grid sm:grid-cols-2 gap-6 lg:gap-8">
+        {features.map((feature, index) => (
+          <div key={index} className="flex items-start space-x-4 group">
+            {/* Checkmark */}
+            <div className="flex-shrink-0 w-8 h-8 bg-accent-green rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-lg">
+              <Check className="w-5 h-5 text-white" />
+            </div>
+            
+            {/* Feature Text */}
+            <div className="pt-1">
+              <p className="font-medium text-gray-900 leading-relaxed" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>
+                {feature}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* CTA Section */}
+      <div className="text-center mt-12 lg:mt-16">
+        <a 
+          href="https://app.govchain.co.za/signup?ref=A9C8486C" 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="inline-block bg-secondary hover:bg-yellow-500 text-slate-800 px-8 lg:px-12 py-4 lg:py-5 rounded-full text-base lg:text-lg font-bold font-calluna transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+        >
+          Get Started Today
+        </a>
+        <p className="text-gray-500 mt-4" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>
+          Complete registration in 7 days or less
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+  );
+}

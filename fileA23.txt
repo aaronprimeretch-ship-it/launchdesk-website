@@ -1,0 +1,49 @@
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: [
+"./index.html",
+"./src/react-app/**/*.{js,ts,jsx,tsx}",
+  ],
+  theme: {
+extend: {
+  colors: {
+    primary: '#0000ff',
+    secondary: '#ffce1b',
+    accent: {
+      purple: '#8b5cf6',
+      orange: '#f97316',
+      green: '#10b981',
+    },
+  },
+  fontFamily: {
+    'calluna': ['"Calluna"', 'Georgia', 'serif'],
+    'sans': ['"Calluna"', 'Georgia', 'serif'],
+  },
+  screens: {
+    'xs': '320px',
+    'sm': '640px',
+    'md': '768px',
+    'lg': '1024px',
+    'xl': '1280px',
+    '2xl': '1536px',
+  },
+  animation: {
+    'float': 'float 6s ease-in-out infinite',
+    'float-delayed': 'float 6s ease-in-out infinite 2s',
+    'float-slow': 'float 8s ease-in-out infinite 1s',
+    'pulse-glow': 'pulse-glow 2s ease-in-out infinite alternate',
+  },
+  keyframes: {
+    float: {
+      '0%, 100%': { transform: 'translateY(0px)' },
+      '50%': { transform: 'translateY(-20px)' },
+    },
+    'pulse-glow': {
+      '0%': { boxShadow: '0 0 20px rgba(0, 0, 255, 0.3)' },
+      '100%': { boxShadow: '0 0 40px rgba(0, 0, 255, 0.6)' },
+    },
+  },
+},
+  },
+  plugins: [],
+};

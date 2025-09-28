@@ -1,0 +1,24 @@
+import { Clock, CreditCard, DollarSign } from 'lucide-react';
+
+export default function BenefitsBar() {
+  return (
+<div className="bg-slate-800 text-white py-4 px-4 sm:px-6 fixed w-full top-0 z-50 h-32 sm:h-16">
+  <div className="max-w-7xl mx-auto">
+    <div className="flex flex-col sm:flex-row justify-center items-center space-y-2 sm:space-y-0 sm:space-x-12 lg:space-x-16 text-sm">
+      <div className="flex items-center space-x-2">
+        <Clock className="w-4 h-4 text-secondary" />
+        <span className="font-calluna text-base">Complete in 7 Days</span>
+      </div>
+      <div className="flex items-center space-x-2">
+        <CreditCard className="w-4 h-4 text-secondary" />
+        <span className="font-calluna text-base">Bank Account Optional</span>
+      </div>
+      <div className="flex items-center space-x-2">
+        <DollarSign className="w-4 h-4 text-secondary" />
+        <span className="font-calluna text-base">No Hidden Fees (Rand Currency)</span>
+      </div>
+    </div>
+  </div>
+</div>
+  );
+}

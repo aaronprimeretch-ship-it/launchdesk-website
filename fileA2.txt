@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta property="og:title" content="LaunchDesk - Your Gateway to Business in South Africa" />
+<meta property="og:description" content="Gateway to South African Business - Connecting entrepreneurs, investors, and businesses with Govchain services" />
+<meta
+  property="og:image"
+  content="https://mocha-cdn.com/og.png"
+  type="image/png"
+/>
+<meta
+  property="og:url"
+  content="https://launchdesk.co.za"
+/>
+<meta property="og:type" content="website" />
+<meta property="og:author" content="LaunchDesk" />
+<meta property="og:site_name" content="LaunchDesk" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:site" content="@launchdesk" />
+<meta property="twitter:title" content="LaunchDesk - Your Gateway to Business in South Africa" />
+<meta property="twitter:description" content="Gateway to South African Business - Connecting entrepreneurs, investors, and businesses with Govchain services" />
+<meta
+  property="twitter:image"
+  content="https://mocha-cdn.com/og.png"
+  type="image/png"
+/>
+<link
+  rel="shortcut icon"
+  href="https://mocha-cdn.com/favicon.ico"
+  type="image/x-icon"
+/>
+<link
+  rel="apple-touch-icon"
+  sizes="180x180"
+  href="https://mocha-cdn.com/apple-touch-icon.png"
+  type="image/png"
+/>
+<title>LaunchDesk - Your Gateway to Business in South Africa</title>
+  </head>
+  <body>
+<div id="root"></div>
+<script type="module" src="/src/react-app/main.tsx"></script>
+  </body>
+</html>

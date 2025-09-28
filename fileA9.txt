@@ -1,0 +1,163 @@
+import { Check, Building, Users, TrendingUp, Shield, Zap, Globe, FileText, Award, Clock } from 'lucide-react';
+
+export default function HeroSection() {
+  return (
+<section className="pt-56 sm:pt-56 lg:pt-64 pb-16 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 min-h-screen flex items-center overflow-hidden relative">
+  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+      {/* Left Side - Content */}
+      <div className="text-center lg:text-left space-y-6 lg:space-y-8 order-2 lg:order-1">
+        {/* Special Offer Badge */}
+        <div className="bg-gradient-to-r from-accent-green to-green-600 text-white rounded-full px-6 py-2 inline-block mb-4 shadow-lg animate-pulse">
+          <span className="font-bold font-calluna text-sm">🎉 Special Offer: Save R100 Today!</span>
+        </div>
+
+        {/* Hero Heading */}
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight text-slate-800 font-calluna" style={{ fontSize: '30px' }}>
+          <span className="block">
+            Quick and Easy Business Registration —
+          </span>
+          <span className="block mt-2">
+            Done Right, Backed by 
+            <span className="text-primary"> Govchain</span>
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p className="text-gray-600 leading-relaxed max-w-2xl mx-auto lg:mx-0" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>
+          Starting a business in South Africa doesn't have to mean navigating a maze of paperwork and legal jargon. With our Govchain-backed team and real human support, you get quick and easy business registration without cutting corners—so you can launch with confidence.
+        </p>
+
+        {/* Main CTA Button */}
+        <div className="flex justify-center lg:justify-start px-8 sm:px-0">
+          <a 
+            href="https://app.govchain.co.za/signup?ref=A9C8486C" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="inline-block text-center bg-secondary hover:bg-yellow-500 text-slate-800 px-8 sm:px-12 py-3 sm:py-4 rounded-full text-base sm:text-lg font-bold font-calluna transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl w-full sm:w-auto mx-2 sm:mx-0"
+          >
+            Start My Business Today
+          </a>
+        </div>
+
+        {/* Features */}
+        <div className="space-y-4 pt-4">
+          <div className="flex items-center justify-center lg:justify-start">
+            <div className="flex-shrink-0 w-6 h-6 bg-accent-green rounded-full flex items-center justify-center mr-3">
+              <Check className="w-4 h-4 text-white" />
+            </div>
+            <span className="text-gray-700" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>Completed in 7 days</span>
+          </div>
+          <div className="flex items-center justify-center lg:justify-start">
+            <div className="flex-shrink-0 w-6 h-6 bg-accent-green rounded-full flex items-center justify-center mr-3">
+              <Check className="w-4 h-4 text-white" />
+            </div>
+            <span className="text-gray-700" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>Trusted by thousands of entrepreneurs</span>
+          </div>
+          <div className="flex items-center justify-center lg:justify-start">
+            <div className="flex-shrink-0 w-6 h-6 bg-accent-green rounded-full flex items-center justify-center mr-3">
+              <Check className="w-4 h-4 text-white" />
+            </div>
+            <span className="text-gray-700" style={{ fontFamily: 'Georgia, serif', fontSize: '16px' }}>Simple & hassle-free</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Side - Image with Animated Icons */}
+      <div className="relative flex justify-center lg:justify-end order-1 lg:order-2 mb-8 sm:mb-12 lg:mb-0 mt-8 sm:mt-0">
+        <div className="relative mx-8 sm:mx-8 lg:mx-0">
+          <img
+            src="https://mocha-cdn.com/01998b54-d44f-7a85-8436-7faefcbe3a23/business-registration-screenshot.png"
+            alt="Business Registration Dashboard"
+            className="w-full max-w-xs sm:max-w-md lg:max-w-lg h-auto rounded-2xl shadow-xl"
+          />
+          
+          {/* Animated Icons */}
+          <div className="absolute -top-2 -left-2 sm:-top-4 sm:-left-4 animate-float">
+            <div className="w-8 h-8 sm:w-12 sm:h-12 bg-gradient-to-r from-primary to-blue-600 rounded-full flex items-center justify-center shadow-lg">
+              <Building className="w-4 h-4 sm:w-6 sm:h-6 text-white" />
+            </div>
+          </div>
+          
+          <div className="absolute -top-3 -right-3 sm:-top-6 sm:-right-6 animate-float-delayed">
+            <div className="w-7 h-7 sm:w-10 sm:h-10 bg-gradient-to-r from-secondary to-yellow-500 rounded-full flex items-center justify-center shadow-lg">
+              <Users className="w-3 h-3 sm:w-5 sm:h-5 text-slate-800" />
+            </div>
+          </div>
+          
+          <div className="absolute top-1/4 -left-4 sm:-left-8 animate-float-slow">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-accent-green to-green-500 rounded-full flex items-center justify-center shadow-lg">
+              <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+            </div>
+          </div>
+          
+          <div className="absolute top-1/3 -right-4 sm:-right-8 animate-float">
+            <div className="w-7 h-7 sm:w-10 sm:h-10 bg-gradient-to-r from-accent-purple to-purple-500 rounded-full flex items-center justify-center shadow-lg">
+              <Shield className="w-3 h-3 sm:w-5 sm:h-5 text-white" />
+            </div>
+          </div>
+          
+          <div className="absolute bottom-1/4 -left-3 sm:-left-6 animate-float-delayed">
+            <div className="w-6 h-6 sm:w-9 sm:h-9 bg-gradient-to-r from-accent-orange to-orange-500 rounded-full flex items-center justify-center shadow-lg">
+              <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+            </div>
+          </div>
+          
+          <div className="absolute -bottom-2 -right-2 sm:-bottom-4 sm:-right-4 animate-float-slow">
+            <div className="w-8 h-8 sm:w-11 sm:h-11 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg">
+              <Globe className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+            </div>
+          </div>
+          
+          <div className="absolute bottom-1/3 -left-5 sm:-left-10 animate-float">
+            <div className="w-5 h-5 sm:w-7 sm:h-7 bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full flex items-center justify-center shadow-lg">
+              <FileText className="w-2 h-2 sm:w-3 sm:h-3 text-white" />
+            </div>
+          </div>
+          
+          <div className="absolute top-1/2 -right-5 sm:-right-10 animate-float-delayed">
+            <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center shadow-lg">
+              <Award className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
+            </div>
+          </div>
+          
+          <div className="absolute top-3/4 left-1 sm:left-0 animate-float-slow">
+            <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full flex items-center justify-center shadow-lg">
+              <Clock className="w-2 h-2 sm:w-3 sm:h-3 text-white" />
+            </div>
+          </div>
+          
+          {/* Success notification overlay */}
+          <div className="absolute top-4 sm:top-8 left-4 sm:left-8 bg-white rounded-lg shadow-lg p-3 sm:p-4 border border-gray-200">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-accent-green rounded-full flex items-center justify-center">
+                <Check className="w-3 h-3 sm:w-5 sm:h-5 text-white" />
+              </div>
+              <div>
+                <div className="text-xs sm:text-sm font-semibold text-gray-900 font-calluna">It's official! Your business has been</div>
+                <div className="text-xs sm:text-sm font-semibold text-gray-900 font-calluna">formed.</div>
+              </div>
+            </div>
+          </div>
+
+          {/* Download certificate notification */}
+          <div className="absolute bottom-4 sm:bottom-8 left-4 sm:left-8 bg-white rounded-lg shadow-lg p-3 sm:p-4 border border-gray-200">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <div className="w-6 h-6 sm:w-8 sm:h-8 bg-primary rounded-full flex items-center justify-center">
+                <svg className="w-3 h-3 sm:w-5 sm:h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+              </div>
+              <div>
+                <div className="text-xs sm:text-sm font-semibold text-gray-900 font-calluna">Download your certificate of good</div>
+                <div className="text-xs sm:text-sm font-semibold text-gray-900 font-calluna">standing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+  );
+}
